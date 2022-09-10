@@ -1,10 +1,10 @@
 # EvMine
 
-This folder contains the source code and data used for the unsupervised key event detection method, EvMine.
+The source code used for paper "[Unsupervised Key Event Detection from Massive Text Corpora](https://arxiv.org/abs/2206.04153)", published in KDD 2022.
 
 ## Requirements
 Python 3 and the following packages are required: numpy, sklearn, igraph, inflect, nltk, datefinder.  
-You will also need transformers package if you want to obtain document and phrase embeddings on your own corpus.
+You will also need huggingface transformers package if you want to obtain document and phrase embeddings on your own corpus.
 
 ## Data
 
