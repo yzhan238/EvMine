@@ -37,8 +37,8 @@ def get_sentences(doc_sents, tokenizer):
                 else:
                     right_ids = []
                 emb_index.append((di, si, tok))
-                sentences.append(([tokenizer.cls_token_id] + left_ids + center_ids + right_ids + [tokenizer.sep_token_id], len(left_ids), len(left_ids) + len(center_ids)))
-                masked_sentences.append(([tokenizer.cls_token_id] + left_ids + [tokenizer.mask_token_id] + right_ids + [tokenizer.sep_token_id], len(left_ids), len(left_ids) + 1))
+                sentences.append(([tokenizer.cls_token_id] + left_ids + center_ids + right_ids + [tokenizer.sep_token_id], len(left_ids) + 1, len(left_ids) + len(center_ids) + 1))
+                masked_sentences.append(([tokenizer.cls_token_id] + left_ids + [tokenizer.mask_token_id] + right_ids + [tokenizer.sep_token_id], len(left_ids) + 1, len(left_ids) + 2))
     return sentences, masked_sentences, emb_index
 
 
@@ -71,7 +71,7 @@ def get_phrase_emb(args, model_name = 'bert-base-uncased'):
     tokenizer = BertTokenizer.from_pretrained(model_name, do_lower_case = False)
 
     model = BertModel.from_pretrained(model_name)
-    model.to(torch.device("cuda:0"))
+    model.to(torch.device("cuda"))
     model.eval()
 
     sentences, masked_sentences, emb_index = get_sentences(doc_sents, tokenizer)
