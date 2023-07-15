@@ -8,7 +8,7 @@ You will also need huggingface transformers package if you want to obtain docume
 
 ## Data
 
-The two datasets used in the paper are available [here](https://www.dropbox.com/sh/48ezsu1eo5fii1w/AACHWV2uX-QO6D6uoJuEVpbKa?dl=0), inlcuding their original corpora, UCPhrase results, phrase embeddings, document embeddings, document publication times, and event labels (which is only used for evaluation). After downloading the dataset, put them under the **./data/** folder.  
+The two datasets used in the paper are available [here](https://www.dropbox.com/sh/48ezsu1eo5fii1w/AACHWV2uX-QO6D6uoJuEVpbKa?dl=0), including their original corpora, UCPhrase results, phrase embeddings, document embeddings, document publication times, and event labels (which is only used for evaluation). After downloading the dataset, put them under the **./data/** folder.  
 If running on your own data, please create a dataset folder and first use [UCPhrase](https://github.com/xgeric/UCPhrase-exp) with tagging mode to mine quality phrases from the corpus. Then, you can get the phrase embeddings via
 
 ```Bash
